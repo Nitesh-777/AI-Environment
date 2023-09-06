@@ -1,0 +1,246 @@
+<mujoco model="ant">
+  <compiler angle="degree" coordinate="local" inertiafromgeom="true"/>
+  <option integrator="RK4" timestep="0.01"/>
+
+  <visual>
+    <quality shadowsize='8192'/>
+    <map znear='0.001'/>
+  </visual>
+
+  <!-- <custom>
+    <global  azimuth="80" elevation="210" />
+    <numeric data="0.0 0.0 0.55 1.0 0.0 0.0 0.0 0.0 1.0 0.0 -1.0 0.0 -1.0 0.0 1.0" name="init_qpos"/>
+  </custom> -->
+
+  <default>
+    <joint armature="1" damping="1" limited="true"/>
+    <geom conaffinity="0" condim="3" density="5.0" friction="1 0.5 0.5" margin="0.01" rgba="0.8 0.6 0.4 1"/>
+  </default>
+
+  <asset>
+    <texture builtin="gradient" height="100" rgb1="1 1 1" rgb2="0 0 0" type="skybox" width="100"/>
+    <texture builtin="flat" height="1278" mark="cross" markrgb="1 1 1" name="texgeom" random="0.01" rgb1="0.8 0.6 0.4" rgb2="0.8 0.6 0.4" type="cube" width="127"/>
+    <texture builtin="checker" height="100" name="texplane" rgb1="0 0 0" rgb2="0.8 0.8 0.8" type="2d" width="100"/>
+    <texture name="foodtexture" type="2d" file="food_texture.png"/>
+    <material name="foodmaterial" reflectance="0.5" shininess="1" specular="0.2" texture="foodtexture"/>
+    <material name="MatPlane" reflectance="0.5" shininess="1" specular="1" texrepeat="60 60" texture="texplane"/>
+    <material name="geom" texture="texgeom" texuniform="true"/>
+  </asset>
+
+  <worldbody>
+    <light cutoff="100" diffuse="1 1 1" dir="-0 0 -1.3" directional="true" exponent="1" pos="0 0 1.3" specular=".1 .1 .1"/>
+    <geom conaffinity="1" condim="3" material="MatPlane" name="floor" pos="0 0 0" rgba="0.8 0.9 0.8 1" size="40 40 40" type="plane"/>
+
+
+    <body name="food_body_1" pos="10.0 0.0 1.">
+      <geom rgba="1. 1. 1. 1" name="food_geom_1" type="sphere" size="0.3 0.3 0.3" density='25' contype="1" material="foodmaterial" conaffinity="1"/>
+      <joint name="food_free_1" type="free" armature='0' damping="0" limited="false" frictionloss="0.2" />
+    </body>
+    
+    <body name="food_body_2" pos="10.0 0.0 2.">
+      <geom rgba="1. 1. 1. 1" name="food_geom_2" type="sphere" size="0.3 0.3 0.3" density='25' contype="1" material="foodmaterial" conaffinity="1"/>
+      <joint name="food_free_2" type="free" armature='0' damping="0" limited="false" frictionloss="0.2" />
+    </body>
+    
+    <body name="food_body_3" pos="10.0 0.0 3.">
+      <geom rgba="1. 1. 1. 1" name="food_geom_3" type="sphere" size="0.3 0.3 0.3" density='25' contype="1" material="foodmaterial" conaffinity="1"/>
+      <joint name="food_free_3" type="free" armature='0' damping="0" limited="false" frictionloss="0.2" />
+    </body>
+   
+    <body name="food_body_4" pos="10.0 0.0 4.">
+      <geom rgba="1. 1. 1. 1" name="food_geom_4" type="sphere" size="0.3 0.3 0.3" density='25' contype="1" material="foodmaterial" conaffinity="1"/>
+      <joint name="food_free_4" type="free" armature='0' damping="0" limited="false" frictionloss="0.2" />
+    </body>
+   
+    <body name="food_body_5" pos="10.0 0.0 5.">
+      <geom rgba="1. 1. 1. 1" name="food_geom_5" type="sphere" size="0.3 0.3 0.3" density='25' contype="1" material="foodmaterial" conaffinity="1"/>
+      <joint name="food_free_5" type="free" armature='0' damping="0" limited="false" frictionloss="0.2" />
+    </body>
+   
+    <body name="food_body_6" pos="10.0 0.0 6.">
+      <geom rgba="1. 1. 1. 1" name="food_geom_6" type="sphere" size="0.3 0.3 0.3" density='25' contype="1" material="foodmaterial" conaffinity="1"/>
+      <joint name="food_free_6" type="free" armature='0' damping="0" limited="false" frictionloss="0.2" />
+    </body>
+   
+    <body name="food_body_7" pos="10.0 0.0 7.">
+      <geom rgba="1. 1. 1. 1" name="food_geom_7" type="sphere" size="0.3 0.3 0.3" density='25' contype="1" material="foodmaterial" conaffinity="1"/>
+      <joint name="food_free_7" type="free" armature='0' damping="0" limited="false" frictionloss="0.2" />
+    </body>
+   
+    <body name="food_body_8" pos="10.0 0.0 8.">
+      <geom rgba="1. 1. 1. 1" name="food_geom_8" type="sphere" size="0.3 0.3 0.3" density='25' contype="1" material="foodmaterial" conaffinity="1"/>
+      <joint name="food_free_8" type="free" armature='0' damping="0" limited="false" frictionloss="0.2" />
+    </body>
+   
+    <body name="food_body_9" pos="10.0 0.0 9.">
+      <geom rgba="1. 1. 1. 1" name="food_geom_9" type="sphere" size="0.3 0.3 0.3" density='25' contype="1" material="foodmaterial" conaffinity="1"/>
+      <joint name="food_free_9" type="free" armature='0' damping="0" limited="false" frictionloss="0.2" />
+    </body>
+   
+    <body name="food_body_10" pos="10.0 0.0 10.">
+      <geom rgba="1. 1. 1. 1" name="food_geom_10" type="sphere" size="0.3 0.3 0.3" density='25' contype="1" material="foodmaterial" conaffinity="1"/>
+      <joint name="food_free_10" type="free" armature='0' damping="0" limited="false" frictionloss="0.2" />
+    </body>
+   
+
+
+
+    <body name="torso" pos="0 0 0.75">
+      <geom fromto="0.0 0.0 0.0  0.34 0.0 -0.05" name="beak" size="0.02" type="capsule" rgba="0.6 0.0 0.0 1"/>
+        
+      <camera name="right_view" mode="fixed" pos="0.2 -0.1 0.1" xyaxes="0 -1 0 0 0 1" fovy="120"  />
+      <geom pos="0.18 -0.1 0.1" name="gviewR" size="0.05" type="sphere" rgba="0.0 0.0 0.0 1"/>
+      <geom pos="0.15 -0.1 0.1" name="gviewR1" size="0.04" type="sphere" rgba="0.0 0.0 0.0 1"/>
+      <geom pos="0.13 -0.1 0.1" name="gviewR2" size="0.03" type="sphere" rgba="0.0 0.0 0.0 1"/>
+      <camera name="left_view" mode="fixed" pos="0.2 +0.1 0.1" xyaxes="0 -1 0 0 0 1" fovy="120"  />
+      <geom pos="0.18 +0.1 0.1" name="gviewL" size="0.05" type="sphere" rgba="0.0 0.0 0.0 1"/>
+      <geom pos="0.15 +0.1 0.1" name="gviewL1" size="0.04" type="sphere" rgba="0.0 0.0 0.0 1"/>
+      <geom pos="0.13 +0.1 0.1" name="gviewL2" size="0.03" type="sphere" rgba="0.0 0.0 0.0 1"/>
+
+      <camera name="top_view" mode="trackcom" pos="0 0 4" xyaxes="0 -1 0 1 0 0"/>
+
+      <geom name="torso_geom" pos="0 0 0" size="0.25 0.25 0.15" type="ellipsoid"/>
+      <site name="imu" />
+
+      <joint armature="0" damping="0" limited="false" margin="0.01" name="root" pos="0 0 0" type="free"/>
+      <body name="front_left_leg" pos="0 0 0">
+        <geom fromto="0 0 0 0.2 0.2 0.0" name="aux_1a_geom" size="0.060" type="capsule"/>
+        <body name="aux_1a" pos="0.2 0.2 0">
+          <joint axis="0 0 1" name="hip_1a" pos="0.0 0.0 0.0" range="-0.4 0.4" type="hinge"/>
+          <geom fromto="0 0 0 0.1 0.1 0.0" name="aux_1b_geom" size="0.02" type="capsule"/>
+          <!-- <body name="aux_1b" pos="0. 0. 0">
+            <joint axis="0 1 0" name="hip_1b" pos="0.0 0.0 0.0" range="-60 60" type="hinge"/>
+            <geom fromto="0.0 0.0 -0.01 0. 0. 0.01" name="aux_1c_geom" size="0.020" type="capsule"/>
+            <body name="aux_1c" pos="0. 0. 0">
+              <joint axis="1 0 0" name="hip_1c" pos="0.0 0.0 0.0" range="-60 60" type="hinge"/>
+              <geom fromto="0.0 0.0 0.0 0.2 0.2 0.0" name="left_leg_geom" size="0.055" type="capsule"/>
+              <body pos="0.2 0.2 0">
+                <joint axis="-1 1 0" name="ankle_1" pos="0.0 0.0 0.0" range="0 70" type="hinge"/>
+                <geom fromto="0.0 0.0 0.0 0.4 0.4 0.0" name="left_ankle_geom" size="0.050" type="capsule"  material="foodmaterial" />
+              </body>
+            </body>
+          </body> -->
+        </body>
+      </body>
+
+      <!-- <body name="front_right_leg" pos="0 0 0">
+        <geom fromto="0.0 0.0 0.0 -0.2 0.2 0.0" name="aux_2_geom" size="0.060" type="capsule"/>
+        <body name="aux_2a" pos="-0.2 0.2 0">
+          <joint axis="0 0 1" name="hip_2a" pos="0.0 0.0 0.0" range="-60 60" type="hinge"/>
+          <geom fromto="0.0 0.0 -0.01 0. 0. 0.01" name="aux_2b_geom" size="0.02" type="capsule"/>
+          <body name="aux_2b" pos="0. 0. 0">
+            <joint axis="0 1 0" name="hip_2b" pos="0.0 0.0 0.0" range="-60 60" type="hinge"/>
+            <geom fromto="0.0 0.0 -0.01 0. 0. 0.01" name="aux_2c_geom" size="0.020" type="capsule"/>
+            <body name="aux_2c" pos="0. 0. 0">
+              <joint axis="1 0 0" name="hip_2c" pos="0.0 0.0 0.0" range="-60 60" type="hinge"/>
+              <geom fromto="0.0 0.0 0.0 -0.2 0.2 0.0" name="right_leg_geom" size="0.055" type="capsule"/>
+              <body pos="-0.2 0.2 0">
+                <joint axis="1 1 0" name="ankle_2" pos="0.0 0.0 0.0" range="-70 -0" type="hinge"/>
+                <geom fromto="0.0 0.0 0.0 -0.4 0.4 0.0" name="right_ankle_geom" size="0.050" type="capsule"  material="foodmaterial" />
+              </body>
+            </body>
+          </body>
+        </body>
+      </body> -->
+
+
+      <!-- <body name="back_leg" pos="0 0 0">
+        <geom fromto="0.0 0.0 0.0 -0.2 -0.2 0.0" name="aux_3_geom" size="0.060" type="capsule"/>
+        <body name="aux_3a" pos="-0.2 -0.2 0">
+          <joint axis="0 0 1" name="hip_3a" pos="0.0 0.0 0.0" range="-60 60" type="hinge"/>
+          <geom fromto="0.0 0.0 -0.01 0. 0. 0.01" name="aux_3b_geom" size="0.02" type="capsule"/>
+          <body name="aux_3b" pos="0. 0. 0">
+            <joint axis="0 1 0" name="hip_3b" pos="0.0 0.0 0.0" range="-60 60" type="hinge"/>
+            <geom fromto="0.0 0.0 -0.01 0. 0. 0.01" name="aux_3c_geom" size="0.020" type="capsule"/>
+            <body name="aux_3c" pos="0. 0. 0">
+              <joint axis="1 0 0" name="hip_3c" pos="0.0 0.0 0.0" range="-60 60" type="hinge"/>
+              <geom fromto="0.0 0.0 0.0 -0.2 -0.2 0.0" name="back_leg_geom" size="0.055" type="capsule"/>
+              <body pos="-0.2 -0.2 0">
+                <joint axis="-1 1 0" name="ankle_3" pos="0.0 0.0 0.0" range="-70 -0" type="hinge"/>
+                <geom fromto="0.0 0.0 0.0 -0.4 -0.4 0.0" name="third_ankle_geom" size="0.050" type="capsule" material="foodmaterial" />
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="right_back_leg" pos="0 0 0">
+        <geom fromto="0.0 0.0 0.0 0.2 -0.2 0.0" name="aux_4_geom" size="0.06" type="capsule"/>
+        <body name="aux_4a" pos="0.2 -0.2 0">
+          <joint axis="0 0 1" name="hip_4a" pos="0.0 0.0 0.0" range="-60 60" type="hinge"/>
+          <geom fromto="0.0 0.0 -0.01 0. 0. 0.01" name="aux_4b_geom" size="0.02" type="capsule"/>
+          <body name="aux_4b" pos="0. 0. 0">
+            <joint axis="0 1 0" name="hip_4b" pos="0.0 0.0 0.0" range="-60 60" type="hinge"/>
+            <geom fromto="0.0 0.0 -0.01 0. 0. 0.01" name="aux_4c_geom" size="0.020" type="capsule"/>
+            <body name="aux_4c" pos="0. 0. 0">
+              <joint axis="1 0 0" name="hip_4c" pos="0.0 0.0 0.0" range="-60 60" type="hinge"/>
+              <geom fromto="0.0 0.0 0.0 0.2 -0.2 0.0" name="rightback_leg_geom" size="0.055" type="capsule"/>
+              <body pos="0.2 -0.2 0">
+                <joint axis="1 1 0" name="ankle_4" pos="0.0 0.0 0.0" range="0 70" type="hinge"/>
+                <geom fromto="0.0 0.0 0.0 0.4 -0.4 0.0" name="fourth_ankle_geom" size="0.05" type="capsule" material="foodmaterial"/>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body> -->
+    </body>
+    
+  </worldbody>
+  <actuator>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_1a" gear="50"/>
+    <!-- <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_1b" gear="150"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_1c" gear="150"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_1" gear="150"/> -->
+    <!-- <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_2a" gear="150"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_2b" gear="150"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_2c" gear="150"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_2" gear="150"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_3a" gear="150"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_3b" gear="150"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_3c" gear="150"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_3" gear="150"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_4a" gear="150"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_4b" gear="150"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_4c" gear="150"/>
+    <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_4" gear="150"/> -->
+  </actuator>
+
+  <sensor>
+    <jointpos joint="hip_1a" />
+    <!-- <jointpos joint="hip_1b" /> -->
+    <!-- <jointpos joint="hip_1c" /> -->
+    <!-- <jointpos joint="ankle_1" /> -->
+    <!-- <jointpos joint="hip_2a" />
+    <jointpos joint="hip_2b" />
+    <jointpos joint="hip_2c" />
+    <jointpos joint="ankle_2" />
+    <jointpos joint="hip_3a" />
+    <jointpos joint="hip_3b" />
+    <jointpos joint="hip_3c" />
+    <jointpos joint="ankle_3" />
+    <jointpos joint="hip_4a" />
+    <jointpos joint="hip_4b" />
+    <jointpos joint="hip_4c" />
+    <jointpos joint="ankle_4" /> -->
+
+    <jointvel joint="hip_1a" />
+    <!-- <jointvel joint="hip_1b" /> -->
+    <!-- <jointvel joint="hip_1c" /> -->
+    <!-- <jointvel joint="ankle_1" /> -->
+    <!-- <jointvel joint="hip_2a" />
+    <jointvel joint="hip_2b" />
+    <jointvel joint="hip_2c" />
+    <jointvel joint="ankle_2" />
+    <jointvel joint="hip_3a" />
+    <jointvel joint="hip_3b" />
+    <jointvel joint="hip_3c" />
+    <jointvel joint="ankle_3" />
+    <jointvel joint="hip_4a" />
+    <jointvel joint="hip_4b" />
+    <jointvel joint="hip_4c" />
+    <jointvel joint="ankle_4" /> -->
+    <gyro name="gyro" site="imu" />
+    <accelerometer name="accelerometer" site="imu" />
+    <magnetometer name="magnetometer" site="imu" />
+  </sensor>
+
+</mujoco>

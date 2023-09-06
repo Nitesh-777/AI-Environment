@@ -1,0 +1,159 @@
+<mujoco model="thing">
+  <compiler angle="degree" coordinate="local" inertiafromgeom="true"/>
+  <option integrator="RK4" />
+
+  <default>
+    <joint armature="1" damping="1" />
+    <geom conaffinity="0" condim="3" density="5.0" friction="1 0.5 0.5" margin="0.01" />
+  </default>
+
+  <visual>
+    <map znear="0.00001" />
+  </visual>
+
+
+  <asset>
+    <texture builtin="gradient" height="100" rgb1="1 1 1" rgb2="0 0 0" type="skybox" width="100"/>
+    <texture builtin="flat" height="1278" mark="cross" markrgb="1 1 1" name="texgeom" random="0.01" rgb1="0.8 0.6 0.4" rgb2="0.8 0.6 0.4" type="cube" width="127"/>
+    <texture builtin="checker" height="100" name="texplane" rgb1="0 0 0" rgb2="0.8 0.8 0.8" type="2d" width="100"/>
+    <material name="MatPlane" reflectance="0.5" shininess="1" specular="1" texrepeat="60 60" texture="texplane"/>
+    <material name="geom" texture="texgeom" texuniform="true"/>
+    <texture name="foodtexture" type="2d" file="food_texture.png"/>
+    <material name="foodmaterial" reflectance="0.5" shininess="1" specular="0.2" texture="foodtexture"/>
+
+    <material name="wheels" reflectance="0.2" shininess="0.21" specular="0.2" rgba="0.1 0.1 0.1 1"/>
+
+  </asset>
+  <worldbody>
+    <light cutoff="100" diffuse="1 1 1" dir="-0 0 -1.3" directional="true" exponent="1" pos="0 0 1.3" specular=".1 .1 .1"/>
+    <geom conaffinity="1" condim="3" material="MatPlane" name="floor" pos="0 0 0" rgba="0.8 0.9 0.8 1" size="40 40 40" type="plane"/>
+
+    <body name="food_body_1" pos="5.0 0.0 1.">
+      <geom rgba="1. 1. 1. 1" name="food_geom_1" type="sphere" size="0.3 0.3 0.3" density='5' contype="1" material="foodmaterial" conaffinity="1"/>
+      <joint name="food_free_1" type="free" armature='0' damping="0" limited="false" frictionloss="0.2" />
+    </body>
+    
+    <body name="food_body_2" pos="5.0 0.0 2.">
+      <geom rgba="1. 1. 1. 1" name="food_geom_2" type="sphere" size="0.3 0.3 0.3" density='5' contype="1" material="foodmaterial" conaffinity="1"/>
+      <joint name="food_free_2" type="free" armature='0' damping="0" limited="false" frictionloss="0.2" />
+    </body>
+    
+    <body name="food_body_3" pos="5.0 0.0 3.">
+      <geom rgba="1. 1. 1. 1" name="food_geom_3" type="sphere" size="0.3 0.3 0.3" density='5' contype="1" material="foodmaterial" conaffinity="1"/>
+      <joint name="food_free_3" type="free" armature='0' damping="0" limited="false" frictionloss="0.2" />
+    </body>
+   
+    <body name="food_body_4" pos="5.0 0.0 4.">
+      <geom rgba="1. 1. 1. 1" name="food_geom_4" type="sphere" size="0.3 0.3 0.3" density='5' contype="1" material="foodmaterial" conaffinity="1"/>
+      <joint name="food_free_4" type="free" armature='0' damping="0" limited="false" frictionloss="0.2" />
+    </body>
+   
+    <body name="food_body_5" pos="5.0 0.0 5.">
+      <geom rgba="1. 1. 1. 1" name="food_geom_5" type="sphere" size="0.3 0.3 0.3" density='5' contype="1" material="foodmaterial" conaffinity="1"/>
+      <joint name="food_free_5" type="free" armature='0' damping="0" limited="false" frictionloss="0.2" />
+    </body>
+   
+    <body name="food_body_6" pos="5.0 0.0 6.">
+      <geom rgba="1. 1. 1. 1" name="food_geom_6" type="sphere" size="0.3 0.3 0.3" density='5' contype="1" material="foodmaterial" conaffinity="1"/>
+      <joint name="food_free_6" type="free" armature='0' damping="0" limited="false" frictionloss="0.2" />
+    </body>
+   
+    <body name="food_body_7" pos="5.0 0.0 7.">
+      <geom rgba="1. 1. 1. 1" name="food_geom_7" type="sphere" size="0.3 0.3 0.3" density='5' contype="1" material="foodmaterial" conaffinity="1"/>
+      <joint name="food_free_7" type="free" armature='0' damping="0" limited="false" frictionloss="0.2" />
+    </body>
+   
+    <body name="food_body_8" pos="5.0 0.0 8.">
+      <geom rgba="1. 1. 1. 1" name="food_geom_8" type="sphere" size="0.3 0.3 0.3" density='5' contype="1" material="foodmaterial" conaffinity="1"/>
+      <joint name="food_free_8" type="free" armature='0' damping="0" limited="false" frictionloss="0.2" />
+    </body>
+   
+    <body name="food_body_9" pos="5.0 0.0 9.">
+      <geom rgba="1. 1. 1. 1" name="food_geom_9" type="sphere" size="0.3 0.3 0.3" density='5' contype="1" material="foodmaterial" conaffinity="1"/>
+      <joint name="food_free_9" type="free" armature='0' damping="0" limited="false" frictionloss="0.2" />
+    </body>
+   
+    <body name="food_body_10" pos="10.0 0.0 10.">
+      <geom rgba="1. 1. 1. 1" name="food_geom_10" type="sphere" size="0.3 0.3 0.3" density='5' contype="1" material="foodmaterial" conaffinity="1"/>
+      <joint name="food_free_10" type="free" armature='0' damping="0" limited="false" frictionloss="0.2" />
+    </body>
+   
+
+
+
+    <body name="torso" pos="0 0 0.5">
+      <joint armature="0" damping="0" limited="false" margin="0.01" name="root" pos="0 0 0" type="free"/>
+      <geom fromto="0.18 0.0 0.0  0.282 0.0 0.041" name="beak" size="0.005" type="capsule" rgba="0.6 0.0 0.0 1"/>
+      <geom fromto="0.18 +0.01 0.0  0.28 0.0 0.04" size="0.003" type="capsule" rgba="0.6 0.0 0.0 1"/>
+      <geom fromto="0.18 -0.01 0.0  0.28 0.0 0.04" size="0.003" type="capsule" rgba="0.6 0.0 0.0 1"/>
+      <geom fromto="0.18 +0.005 0.0  0.28 0.0 0.04" size="0.004" type="capsule" rgba="0.6 0.0 0.0 1"/>
+      <geom fromto="0.18 -0.005 0.0  0.28 0.0 0.04" size="0.004" type="capsule" rgba="0.6 0.0 0.0 1"/>
+        
+      <camera name="view" mode="fixed" pos="0.2 +0 0.05" xyaxes="0 -1 0 0 0 1" fovy="120" />
+      <geom pos="0.07 +0 0.07" name="gviewL" size="0.01 0.03 0.03" type="box" rgba="0.14 0.14 0.14 1"/>
+      <geom pos="0.06 +0 0.07" name="gviewL1" size="0.025" type="sphere" rgba="0.1 0.1 0.1 1"/>
+
+      <camera name="top_view" mode="trackcom" pos="0 0 4" xyaxes="0 -1 0 1 0 0"/>
+
+      <site name="imu" />
+
+
+      <geom name="torso_geom" pos="0 0 0.0" size="0.189 0.189 0.05" density="25" type="ellipsoid"/>
+      
+      <body name="front_center_leg" pos="0.16 0 -0.0398">
+        <geom name="aux_1_geom" size="0.01" type="sphere"/>
+        <body name="aux_1" pos="0 0 0">
+          <joint axis="0 1 0" pos="0.0 0.0 0.0" damping="0" type="hinge"/>
+          <geom name="fleg_geom" size="0.01" type="sphere"  />
+          <body name="aux_12" pos="0 0 0">
+            <joint axis="1 0 0" pos="0.0 0.0 0.0" damping="0" type="hinge"/>
+            <geom name="fleg_geom2" size="0.02" type="sphere"  friction="0" material="wheels" />
+          </body>
+        </body>
+      </body>
+      <body name="back_center_leg" pos="-0.16 0 -0.0398">
+        <geom name="baux_1_geom" size="0.01" type="sphere"/>
+        <body name="baux_1" pos="0 0 0">
+          <joint axis="0 1 0" pos="0.0 0.0 0.0" damping="0" type="hinge"/>
+          <geom name="bleg_geom" size="0.01" type="sphere"  />
+          <body name="baux_12" pos="0 0 0">
+            <joint axis="1 0 0" pos="0.0 0.0 0.0" damping="0" type="hinge"/>
+            <geom name="bleg_geom2" size="0.02" type="sphere"  friction="0" material="wheels" />
+          </body>
+        </body>
+      </body>
+
+      <body name="left_leg" pos="0 0.2 0">
+        <geom rgba="0 0.45 0 1" name="aux_2_geom" size="0.01" type="sphere"/>
+        <body name="aux_2" pos="0 0 0">
+          <joint axis="0 1 0" name="joint_bl" pos="0 0 0" type="hinge"/>
+          <geom name="bleft_leg_geom" size="0.06 0.008 0.06" type="ellipsoid" friction="1" material="wheels" />
+        </body>
+      </body>
+
+      <body name="right_leg" pos="0 -0.2 0">
+        <geom rgba="0 0.45 0 1" name="aux_3_geom" size="0.01" type="sphere" material="wheels" />
+        <body name="aux_3" pos="0 0 0">
+          <joint axis="0 1 0" name="joint_br" pos="0 0 0" type="hinge"/>
+          <geom name="bright_leg_geom" size="0.06 0.008 0.06" type="ellipsoid" friction="1" material="wheels" />
+        </body>
+      </body>
+
+
+    </body>
+
+  </worldbody>
+  <actuator>
+    <velocity joint="joint_bl" kv="100" ctrllimited="true" ctrlrange="-30 30"/>
+    <velocity joint="joint_br" kv="100" ctrllimited="true" ctrlrange="-30 30"/>
+  </actuator>
+
+  <sensor>
+    <jointpos joint="joint_bl" />
+    <jointvel joint="joint_br" />
+    <gyro name="gyro" site="imu" />
+    <accelerometer name="accelerometer" site="imu" />
+    <magnetometer name="magnetometer" site="imu" />
+  </sensor>
+
+</mujoco>
